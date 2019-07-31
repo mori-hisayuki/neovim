@@ -1,0 +1,78 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+
+# ------------------------------------
+# status line setting
+# ------------------------------------
+# main
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+hook_add = '''
+    let g:airline#extensions#tabline#enabled=1
+    let g:airline_powerline_fonts=1
+    let g:airline#extensions#hunks#enabled=0
+    let g:airline#extensions#tabline#buffer_idx_mode=1
+    let g:airline_right_sep='/'
+    let g:airline_left_sep='▶'
+    let g:airline_right_alt_sep='/'
+    let g:airline_left_alt_sep='▶'
+'''
+
+# themes
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+hook_add = '''
+    set laststatus=2
+    set background=dark
+    let g:airline_theme='tender'
+'''
+ 
+# ------------------------------------
+# colorscheme tender setting
+# ------------------------------------
+[[plugins]]
+repo = 'jacoborus/tender.vim'
+hook_add = '''
+    colorscheme tender 
+    set background=dark
+    syntax on
+    set t_Co=256
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+'''
+
+# ------------------------------------
+# Git vim-fugitive 
+# ------------------------------------
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+hook_add = '''
+    nnoremap <silent> gs :Gstatus<CR><C-w>T
+    nnoremap <silent> gps :Gpush<CR>
+    nnoremap <silent> gpl :Gpull<CR>
+'''
+
+# ------------------------------------
+# NERDTree
+# ------------------------------------
+# main
+[[plugins]]
+repo = 'scrooloose/nerdtree' 
+hook_add = '''
+    let g:NERDTreeShowHidden=1
+    noremap <silent><C-n> :NERDTreeToggle<CR>
+    augroup NERDTree
+        autocmd!
+        autocmd vimenter * NERDTree
+        autocmd StdinReadPre * let s:std_in=1
+        autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+        autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    augroup END
+'''
+
+# tree同期
+[[plugins]]
+repo = 'jistr/vim-nerdtree-tabs'
+hook_add='''
+    let g:nerdtree_tabs_open_on_console_startup=1
+'''
