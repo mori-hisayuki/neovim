@@ -40,6 +40,7 @@ if dein#load_state(s:dein_dir)
 
   " 利用時に読み込むプラグインのtoml
   call dein#load_toml(s:toml_dir . '/lazy.toml', {'lazy': 1})
+  call dein#load_toml(s:toml_dir . '/tomls/html_lazy.toml', {'lazy': 1})
 
   " Required:
   call dein#end()
