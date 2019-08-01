@@ -2,15 +2,15 @@
 set encoding=utf-8
 " edita setting
 set number							                            " 行番号表示
-set splitbelow                                                  " 水平分割時に下に表示
-set noequalalways                                               " 分割時に自動調整を無効化
-set wildmenu                                                    " コマンドモードの補完 
+set splitbelow                                      " 水平分割時に下に表示
+set noequalalways                                   " 分割時に自動調整を無効化
+set wildmenu                                        " コマンドモードの補完 
 " cursorl setting
-set ruler							                            " カーソルの位置表示  
+set ruler							                              " カーソルの位置表示  
 set cursorline							                        " カーソルハイライト
 " tab setting
-set expandtab							                        " tabを複数のspaceに置き換え
-set tabstop=2							                        " tabは半角4文字
+set expandtab							                          " tabを複数のspaceに置き換え
+set tabstop=2							                          " tabは半角4文字
 " tarminal setting
 set sh=zsh
 
