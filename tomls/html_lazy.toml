@@ -2,4 +2,16 @@
 repo = 'mattn/emmet-vim'
 ft = ['html','css']
 
+[[plugins]]
+repo = 'mattn/emmet-vim'
+ft = ['html','css']
 
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+ft = ['css']
+hook_add = '''
+  augroup VimCSS3Syntax
+    autocmd!
+    autocmd FileType css setlocal iskeyword+=-
+  augroup END
+'''
