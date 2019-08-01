@@ -97,4 +97,6 @@ inoremap <C-l> <Right>
 inoremap <C-k> <Up>
 inoremap <C-j> <Down>
 
+" Terminal Mode
+tnoremap <C-n> <C-\><C-n>
 
