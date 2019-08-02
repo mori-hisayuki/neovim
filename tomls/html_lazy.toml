@@ -1,13 +1,7 @@
 [[plugins]]
 repo = 'mattn/emmet-vim'
-ft = ['html','css']
-
-[[plugins]]
-repo = 'hail2u/vim-css3-syntax'
-ft = ['css']
 hook_add = '''
-  augroup VimCSS3Syntax
-    autocmd!
-    autocmd FileType css setlocal iskeyword+=-
-  augroup END
+    let g:user_emmet_leader_key='<C-y>'
+    let g:user_emmet_install_global = 0
 '''
+ft = ['html','css']
