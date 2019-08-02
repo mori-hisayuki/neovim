@@ -9,14 +9,16 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = '''
+    let g:airline#extensions#branch#enabled=1
     let g:airline#extensions#tabline#enabled=1
-    let g:airline_powerline_fonts=1
+    let g:airline#extensions#wordcount#enabled=0
     let g:airline#extensions#hunks#enabled=0
+    let g:airline_section_c = '%t'
+    let g:airline_section_x = '%{&filetype}'
+    let g:airline#extensions#ale#error_symbol = ' '
+    let g:airline#extensions#ale#warning_symbol = ' '
     let g:airline#extensions#tabline#buffer_idx_mode=1
-    let g:airline_right_sep='/'
-    let g:airline_left_sep='▶'
-    let g:airline_right_alt_sep='/'
-    let g:airline_left_alt_sep='▶'
+    let g:airline_powerline_fonts = 1
 '''
 
 # themes
@@ -27,6 +29,10 @@ hook_add = '''
     set background=dark
     let g:airline_theme='tender'
 '''
+
+# themes
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
  
 # ------------------------------------
 # colorscheme tender setting
@@ -40,6 +46,12 @@ hook_add = '''
     set t_Co=256
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 '''
+
+# ------------------------------------
+# wakatime setting
+# ------------------------------------
+[[plugins]]
+repo = 'wakatime/vim-wakatime'
 
 # ------------------------------------
 # Git vim-fugitive 

@@ -1,0 +1,7 @@
+[[plugins]]
+repo = 'mattn/emmet-vim'
+hook_add = '''
+    let g:user_emmet_leader_key='<C-y>'
+    let g:user_emmet_install_global = 0
+'''
+ft = ['html','css']

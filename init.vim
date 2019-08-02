@@ -1,16 +1,16 @@
 " encode setting
 set encoding=utf-8
 " edita setting
-set number							                            " 行番号表示
-set splitbelow                                                  " 水平分割時に下に表示
-set noequalalways                                               " 分割時に自動調整を無効化
-set wildmenu                                                    " コマンドモードの補完 
+set number							                          " 行番号表示
+set splitbelow                                    " 水平分割時に下に表示
+set noequalalways                                 " 分割時に自動調整を無効化
+set wildmenu                                      " コマンドモードの補完 
 " cursorl setting
 set ruler							                            " カーソルの位置表示  
-set cursorline							                        " カーソルハイライト
+set cursorline							                      " カーソルハイライト
 " tab setting
 set expandtab							                        " tabを複数のspaceに置き換え
-set tabstop=2							                        " tabは半角4文字
+set tabstop=2							                        " tabは半角2文字
 " tarminal setting
 set sh=zsh
 
@@ -40,6 +40,7 @@ if dein#load_state(s:dein_dir)
 
   " 利用時に読み込むプラグインのtoml
   call dein#load_toml(s:toml_dir . '/lazy.toml', {'lazy': 1})
+  call dein#load_toml(s:toml_dir . '/tomls/html_lazy.toml', {'lazy': 1})
 
   " Required:
   call dein#end()
@@ -97,4 +98,12 @@ inoremap <C-l> <Right>
 inoremap <C-k> <Up>
 inoremap <C-j> <Down>
 
+" Terminal Mode
+tnoremap <C-n> <C-\><C-n>
 
+augroup MyXML
+  autocmd!
+  autocmd Filetype xml inoremap <buffer> </ </<C-x><C-o>
+  autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
+  autocmd Filetype eruby inoremap <buffer> </ </<C-x><C-o>
+augroup END
