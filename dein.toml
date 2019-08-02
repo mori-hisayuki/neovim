@@ -11,11 +11,12 @@ hook_add = '''
     let g:airline#extensions#branch#enabled=1
     let g:airline#extensions#tabline#enabled=1
     let g:airline#extensions#wordcount#enabled=0
+    let g:airline#extensions#hunks#enabled=0
     let g:airline_section_c = '%t'
     let g:airline_section_x = '%{&filetype}'
     let g:airline#extensions#ale#error_symbol = ' '
     let g:airline#extensions#ale#warning_symbol = ' '
-    let g:airline#extensions#hunks#enabled=0
+    let g:airline#extensions#tabline#buffer_idx_mode=1
     let g:airline_powerline_fonts = 1
 '''
 
@@ -27,6 +28,10 @@ hook_add = '''
     set background=dark
     let g:airline_theme='tender'
 '''
+
+# themes
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
  
 # themes
 [[plugins]]
