@@ -10,7 +10,9 @@ set ruler							                              " カーソルの位置表示
 set cursorline							                        " カーソルハイライト
 " tab setting
 set expandtab							                          " tabを複数のspaceに置き換え
-set tabstop=2							                          " tabは半角4文字
+set tabstop=2							                          " tabは半角2文字
+set shiftwidth=2
+set list
 " tarminal setting
 set sh=zsh
 
@@ -31,12 +33,16 @@ let s:toml_dir = expand('~/.config/nvim')
 " Required:
 execute 'set runtimepath^=' . s:dein_repo_dir
 
+" Runtime Load
+runtime! runtime/*.vim
+
 " Required:
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
   " 起動時に読み込むプラグイン群のtoml
   call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
+  call dein#load_toml(s:toml_dir . '/tomls/angular_lazy.toml', {'lazy': 0})
 
   " 利用時に読み込むプラグインのtoml
   call dein#load_toml(s:toml_dir . '/lazy.toml', {'lazy': 1})
@@ -76,12 +82,13 @@ noremap   <Left>   <nop>
 noremap   <Right>  <nop>
 noremap   <BS>     <nop>
 " Normal Mode
-cnoremap init :<C-u>edit $MYVIMRC<CR>					        " init.vim呼び出し
+cnoremap init :<C-u>tabe $MYVIMRC<CR>					        " init.vim呼び出し
 noremap N :set number<CR>
 noremap NN :set nonumber<CR>
 noremap <Space>s :source $MYVIMRC<CR>					        " init.vim読み込み
 noremap <Space>w :<C-u>w<CR>					                " ファイル保存
 noremap <Space>t :split<CR>:terminal<CR><C-u>i                              " terminal起動
+
 noremap <silent><C-h> <C-w>h
 noremap <silent><C-j> <C-w>j
 noremap <silent><C-k> <C-w>k
@@ -90,7 +97,7 @@ noremap <silent>> <C-w>>
 noremap <silent>< <C-w><
 
 " Insert Mode
-inoremap <silent> jj <ESC>:<C-u>w<CR>:<C-u>source $MYVIMRC<CR>	" InsertMode抜けて保存・読み込み
+inoremap <silent> jj <ESC>:<C-u>w<CR>	" InsertMode抜けて保存・読み込み
 " Insert mode movekey bind
 inoremap <C-d> <BS>
 inoremap <C-h> <Left>
@@ -105,5 +112,5 @@ augroup MyXML
   autocmd!
   autocmd Filetype xml inoremap <buffer> </ </<C-x><C-o>
   autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
-  autocmd Filetype eruby inoremap <buffer> </ </<C-x><C-o>
 augroup END
+

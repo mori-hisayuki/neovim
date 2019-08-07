@@ -1,0 +1,5 @@
+[[plugins]]
+repo = 'bdauria/angular-cli.vim'
+hook_add = '''
+autocmd FileType typescript,html call angular_cli#init()
+'''
