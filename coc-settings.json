@@ -1,0 +1,11 @@
+{
+  "suggest.echodocSupport": true,
+  "suggest.maxCompleteItemCount": 20,
+  "coc.preferences.formatOnSaveFiletypes": ["javascript","typescript","json"],
+  "coc.preferences.colorSupport" : true,
+  "diagnostic.errorSign": " ",
+  "diagnostic.warningSign": "• ",
+  "diagnostic.infoSign": "•",
+  "typescript.suggest.autoImports": true,
+  "tsserver.log" : "verbose"
+}
